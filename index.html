@@ -1,0 +1,58 @@
+<!doctype html>
+<html ng-app="MyApp">
+<head>
+  <title>HTML - Is it valid?</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+
+</head>
+<body ng-controller="MyCtrl">
+  <h1>Is it valid?</h1>
+  <div>{{ question.html }}</div>
+  <button ng-click="yes()">Yes</button>
+  <button ng-click="no()">No</button>
+
+  <script>
+    var json = [
+                 {
+                   "valid": true,
+                   "html": "<strong>Content</strong>",
+                   "msg": "It's valid!"
+                 },
+                 {
+                   "valid": false,
+                   "html": "<strong>Content<strong>",
+                   "msg": "The end tag is missing a '/'"
+                 }
+               ];
+
+    function MyCtrl($scope) {
+      // TODO - Check json length
+
+      var questionNumber = 0;
+      $scope.setQuestion = function() {
+        $scope.question = json[questionNumber];
+        questionNumber = (questionNumber + 1) % json.length;
+      };
+
+      $scope.setQuestion();
+
+      $scope.no = function() {
+        
+        $scope.setQuestion();
+      };
+
+      $scope.yes = function() {
+
+        $scope.setQuestion();
+      }
+    }
+
+    angular.module('MyApp', [])
+    .controller('MyCtrl', [
+      '$scope',
+      MyCtrl
+    ]);
+
+  </script>
+</body>
+</html>
