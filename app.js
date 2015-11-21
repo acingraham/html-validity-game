@@ -1,40 +1,45 @@
-var json = [
-             {
-               "valid": true,
-               "html": "<strong>Content</strong>",
-               "msg": "It's valid!"
-             },
-             {
-               "valid": false,
-               "html": "<strong>Content<strong>",
-               "msg": "The end tag is missing a '/'"
-             }
-           ];
+(function() {
 
-function MyCtrl($scope) {
-  // TODO - Check json length
+    'use strict';
 
-  var questionNumber = 0;
-  $scope.setQuestion = function() {
-    $scope.question = json[questionNumber];
-    questionNumber = (questionNumber + 1) % json.length;
-  };
+    var json = [
+        {
+            "valid": true,
+            "html": "<strong>Content</strong>",
+            "msg": "It's valid!"
+        },
+        {
+            "valid": false,
+            "html": "<strong>Content<strong>",
+            "msg": "The end tag is missing a '/'"
+        }
+    ];
 
-  $scope.setQuestion();
+    function AppCtrl($scope) {
+        // TODO - Check json length
 
-  $scope.no = function() {
-    
-    $scope.setQuestion();
-  };
+        var questionNumber = 0;
 
-  $scope.yes = function() {
+        $scope.setQuestion = function() {
+            $scope.question = json[questionNumber];
+            questionNumber = (questionNumber + 1) % json.length;
+        };
 
-    $scope.setQuestion();
-  }
-}
+        $scope.setQuestion();
 
-angular.module('MyApp', [])
-.controller('MyCtrl', [
-  '$scope',
-  MyCtrl
-]);
+        $scope.no = function() {
+            $scope.setQuestion();
+        };
+
+        $scope.yes = function() {
+            $scope.setQuestion();
+        };
+    }
+
+    angular.module('app', [])
+    .controller('AppCtrl', [
+        '$scope',
+        AppCtrl
+    ]);
+
+})();
