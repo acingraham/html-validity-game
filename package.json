@@ -1,0 +1,34 @@
+{
+  "name": "html-validity-game",
+  "version": "1.0.0",
+  "description": "A game for teaching HTML",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/acingraham/html-validity-game.git"
+  },
+  "keywords": [
+    "html",
+    "game",
+    "learning"
+  ],
+  "author": "Andrew Ingraham",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/acingraham/html-validity-game/issues"
+  },
+  "homepage": "https://github.com/acingraham/html-validity-game#readme",
+  "devDependencies": {
+    "eslint": "^1.10.1",
+    "eslint-config-airbnb": "^1.0.0",
+    "eslint-config-google": "^0.3.0",
+    "eslint-config-standard": "^4.4.0",
+    "eslint-plugin-react": "^3.10.0",
+    "eslint-plugin-standard": "^1.3.1",
+    "gulp": "^3.9.0",
+    "gulp-eslint": "^1.1.0"
+  }
+}
