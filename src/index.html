@@ -2,13 +2,14 @@
 <html ng-app="app">
 <head>
     <title>HTML - Is it valid?</title>
+    <link rel="stylesheet" type="text/css" href="dist/css/materialize.css">
     <script src="node_modules/angular/angular.min.js"></script>
 </head>
 <body ng-controller="AppCtrl">
     <h1>Is it valid?</h1>
     <div>{{ question.html }}</div>
-    <button ng-click="yes()">Yes</button>
-    <button ng-click="no()">No</button>
+    <button ng-click="yes()" class="btn waves-effect waves-light">Yes</button>
+    <button ng-click="no()" class="btn waves-effect waves-light">No</button>
     <script src="src/app/app.js"></script>
 </body>
 </html>

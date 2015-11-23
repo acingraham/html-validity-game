@@ -1,5 +1,6 @@
 var eslint     = require('gulp-eslint'),
     gulp       = require('gulp'),
+    sass       = require('gulp-sass'),
     server     = require('gulp-server-livereload');
 
 gulp.task('lint', function() {
@@ -7,6 +8,12 @@ gulp.task('lint', function() {
         .pipe(eslint())
         .pipe(eslint.format())
         .pipe(eslint.failAfterError());
+});
+
+gulp.task('sass', function() {
+    return gulp.src('./node_modules/materialize-css/sass/**/*.scss')
+    .pipe(sass().on('error', sass.logError))
+    .pipe(gulp.dest('./dist/css'));
 });
 
 gulp.task('watch', function() {
