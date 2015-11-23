@@ -4,14 +4,14 @@
 
     var json = [
         {
-            'valid': true,
-            'html': '<strong>Content</strong>',
-            'msg': 'It\'s valid!'
+            valid: true,
+            html: '<strong>Content</strong>',
+            msg: 'It\'s valid!'
         },
         {
-            'valid': false,
-            'html': '<strong>Content<strong>',
-            'msg': 'The end tag is missing a /'
+            valid: false,
+            html: '<strong>Content<strong>',
+            msg: 'The end tag is missing a /'
         }
     ];
 
